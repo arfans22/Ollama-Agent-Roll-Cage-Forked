@@ -56,7 +56,7 @@ class ollama_chatbot_class:
         self.user_input_model_select = user_input_model_select
 
         # Default Agent Voice Reference
-        self.voice_name = "C3PO"
+        self.voice_name = "Amy_en"
         # Default Movie None
         self.movie_name = None
         self.save_name = "default"
@@ -77,14 +77,15 @@ class ollama_chatbot_class:
             args: user_input_prompt, user_input_model_select, search_google
             returns: none
         """
-        # self.chat_history.append({"role": "system", "content": "You are Rick, you are tasked with guiding morty from earth c137 on his adventures through the multiverse, here is morty. "})
+        # TODO OPTIONAL, SET SYSTEM PROMPT (DOES NOT EDIT MODEL, JUST TEMPORARY PROMPT)
+        if user_input_prompt == "RicknMorty" or user_input_prompt == "RicknMorty:latest":
+            self.chat_history.append({"role": "system", "content": "You are Rick, you are tasked with guiding morty from earth c137 on his adventures through the multiverse, here is morty. "})
         # self.chat_history.append({"role": "system", "content": "You are tasked with responding to the user, if the user requests for latex code utilize \[...\] formating, DO NOT USE $$...$$ latex formatting, otherwise respond to the user."})
-                self.chat_history.append({"role": "system", "content": "You are tasked with responding to the user, if the user requests for latex code utilize \[...\] formating, DO NOT USE $$...$$ latex formatting, otherwise respond to the user."})
+        if user_input_prompt == "phi3" or user_input_prompt == "phi3:latest":
+            self.chat_history.append({"role": "system", "content": "You are borch/phi3_speed_chat, a phi3 large language model, specifically you have been tuned to respond in a more quick and conversational manner. Answer in short responses, unless long response is requested, the user is using speech to text for communication, its also okay to be fun an wild as a phi3 ai assistant. Its also okay to respond with a question, or think twice about a response during conversation to refine the experience but not always, if directed to do something just do it but to direct a conversation while it flows realize that not everything needs to be said before listening to the users response. (if the user decides to request a latex math code output, use \[...\] instead of $$...$$ notation)"})
+
+        # TODO DEFAULT TO MODEL SYSTEM PROMPT
         self.chat_history.append({"role": "user", "content": user_input_prompt})
-        data = {
-            "model": self.user_input_model_select,
-            "stream": False,
-        }
 
         try:
             # print(f"{self.chat_history}")
@@ -433,6 +434,7 @@ class ollama_chatbot_class:
         return
         
 if __name__ == "__main__":
+
     """ 
     The main loop for the ollama_chatbot_class, utilizing a state machine for user command injection during command line prompting,
     all commands start with /, and are named logically.
@@ -446,6 +448,7 @@ if __name__ == "__main__":
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
     OKGREEN = '\033[92m'
+    ORANGE = '\033[38;5;208m'
 
     # Unused Colors
     DARK_GREY = '\033[90m'
@@ -458,7 +461,7 @@ if __name__ == "__main__":
 
     # initialize command state flags
     leap_flag = False
-    listen_flag = True
+    listen_flag = True # IF FALSE=SPEECH TO TEXT - important setting amos #
     latex_flag = False
 
     # instantiate class calls
@@ -604,7 +607,7 @@ if __name__ == "__main__":
             print(YELLOW + f"{user_input_prompt}" + OKCYAN)
             # Send the prompt to the assistant
             response = ollama_chatbot_class.send_prompt(user_input_prompt)
-            print(RED + f"<<< {ollama_chatbot_class.user_input_model_select} >>> " + END + f"{response}" + RED)
+            print(ORANGE + f"<<< {ollama_chatbot_class.user_input_model_select} >>> " + END + f"{response}" + ORANGE)
 
             # Check for latex and add to queue
             if latex_flag:
