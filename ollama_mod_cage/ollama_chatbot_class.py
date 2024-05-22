@@ -400,7 +400,7 @@ class ollama_chatbot_class:
             self.movie_name = None
 
         # Search for the name after 'activate save'
-        match = re.search(r"(activate save as|/save as) ([^/.]*)", user_input_prompt, flags=re.IGNORECASE)
+        match = re.search(r"(activate save|/save) ([^/.]*)", user_input_prompt, flags=re.IGNORECASE)
         if match:
             self.save_name = match.group(2)
             self.save_name = tts_processor_class.file_name_conversation_history_filter(self.save_name)
@@ -409,7 +409,7 @@ class ollama_chatbot_class:
             self.save_name = None
 
         # Search for the name after 'activate load'
-        match = re.search(r"(activate load as|/load as) ([^/.]*)", user_input_prompt, flags=re.IGNORECASE)
+        match = re.search(r"(activate open|/open) ([^/.]*)", user_input_prompt, flags=re.IGNORECASE)
         if match:
             self.load_name = match.group(2)
             self.load_name = tts_processor_class.file_name_conversation_history_filter(self.load_name)
@@ -461,7 +461,7 @@ if __name__ == "__main__":
 
     # initialize command state flags
     leap_flag = False
-    listen_flag = True # IF FALSE=SPEECH TO TEXT - important setting amos #
+    listen_flag = False # IF FALSE=SPEECH TO TEXT - important setting amos #
     latex_flag = False
 
     # instantiate class calls
@@ -513,12 +513,12 @@ if __name__ == "__main__":
             print(f"Agent voice swapped to {ollama_chatbot_class.voice_name}")
             print(GREEN + f"<<< USER >>> " + OKGREEN)
 
-        elif re.match(r"(activate save as|/save as) ([^/.]*)", user_input_prompt.lower()):
+        elif re.match(r"(activate save|/save) ([^/.]*)", user_input_prompt.lower()):
             ollama_chatbot_class.save_to_json()
             print(f"Chat history saved to {ollama_chatbot_class.save_name}.json")
             print(GREEN + f"<<< USER >>> " + OKGREEN)
 
-        elif re.match(r"(activate load as|/load as) ([^/.]*)", user_input_prompt.lower()):
+        elif re.match(r"(activate open|/open) ([^/.]*)", user_input_prompt.lower()):
             ollama_chatbot_class.load_from_json()
             print(f"Chat history loaded from {ollama_chatbot_class.load_name}.json")
             print(GREEN + f"<<< USER >>> " + OKGREEN)

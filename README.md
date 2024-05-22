@@ -232,8 +232,8 @@ ollama_agent_roll_cage 0.24 currently supports the following commands:
 - /listen on/off -> turn off speech to text recognition, text to speech generation listen mode only
 - /leap on/off -> turn off text to speech audio generation, speech to text recognition only, for speed interface
 - /voice swap {name} -> user input & voice? -> swap the current audio reference wav file to modify the agent's reference voice
-- /save as -> user input & voice? -> "name" -> save the current conversation history with a name to the current model folder
-- /load as -> user input & voice? -> "name" -> load selected conversation
+- /save -> user input & voice? -> "name" -> save the current conversation history with a name to the current model folder
+- /open -> user input & voice? -> "name" -> load selected conversation
 -/convert tensor - safetensor gguf
 -/create gguf - create ollama model from gguf
 ### /swap -> enter model name
@@ -241,7 +241,7 @@ Once you have created your own custom agent, you can now start accessing the cha
 Swap out the current chatbot model for any other model, type /swap or say "activate swap" in STT.
 
   <img
-src="Manual_Commands/Agent_Test_Pics/model_swap_test.png"
+src="Manual_Commands/Agent_Test_Pics/model_swap_tst.png"
   style="display: inline-block; margin: 0 auto; max-width: 50px">
   
 ### /save as & /load as
