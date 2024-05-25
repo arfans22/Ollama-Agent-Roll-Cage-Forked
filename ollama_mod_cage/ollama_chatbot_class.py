@@ -66,7 +66,7 @@ class ollama_chatbot_class:
         self.chat_history = []
         self.llava_history = []
         # Default Agent Voice Reference
-        self.voice_name = "Amy_en"
+        self.voice_name = "Ocha_id"
         # Default conversation name
         self.save_name = "default"
         self.load_name = "default"
@@ -149,8 +149,8 @@ class ollama_chatbot_class:
         """
         # collect agent data with stt or ttt
         if listen_flag == False:  # listen_flag is False, use speech recognition
-            print("Press space bar to record the new agent's agent name.")
-            while not keyboard.is_pressed('space'):  # wait for space bar press
+            print("Press up bar to record the new agent's agent name.")
+            while not keyboard.is_pressed('up'):  # wait for up bar press
                 time.sleep(0.1)
             # Now start recording
             try:
@@ -162,8 +162,8 @@ class ollama_chatbot_class:
             except sr.RequestError as e:
                 print(OKCYAN + "Could not request results from Google Speech Recognition service; {0}".format(e) + OKCYAN)
 
-            print("Press space bar to record the new agent's temperature.")
-            while not keyboard.is_pressed('space'):  # wait for space bar press
+            print("Press up bar to record the new agent's temperature.")
+            while not keyboard.is_pressed('up'):  # wait for up bar press
                 time.sleep(0.1)
             # Now start recording
             try:
@@ -174,8 +174,8 @@ class ollama_chatbot_class:
             except sr.RequestError as e:
                 print(OKCYAN + "Could not request results from Google Speech Recognition service; {0}".format(e) + OKCYAN)
 
-            print("Press space bar to record the new agent's system prompt.")
-            while not keyboard.is_pressed('space'):  # wait for space bar press
+            print("Press up bar to record the new agent's system prompt.")
+            while not keyboard.is_pressed('up'):  # wait for up bar press
                 time.sleep(0.1)
             # Now start recording
             try:        
@@ -222,8 +222,8 @@ class ollama_chatbot_class:
             self.model_git = model_git
             # collect agent data with stt or ttt
             if listen_flag == False:  # listen_flag is False, use speech recognition
-                print("Press space bar to record the new agent's agent name.")
-                while not keyboard.is_pressed('space'):  # wait for space bar press
+                print("Press up arrow bar to record the new agent's agent name.")
+                while not keyboard.is_pressed('up'):  # wait for up bar press
                     time.sleep(0.1)
                 # Now start recording
                 try:
@@ -235,8 +235,8 @@ class ollama_chatbot_class:
                 except sr.RequestError as e:
                     print(OKCYAN + "Could not request results from Google Speech Recognition service; {0}".format(e) + OKCYAN)
 
-                print("Press space bar to record the new agent's temperature.")
-                while not keyboard.is_pressed('space'):  # wait for space bar press
+                print("Press up arrow bar to record the new agent's temperature.")
+                while not keyboard.is_pressed('up'):  # wait for up bar press
                     time.sleep(0.1)
                 # Now start recording
                 try:
@@ -247,8 +247,8 @@ class ollama_chatbot_class:
                 except sr.RequestError as e:
                     print(OKCYAN + "Could not request results from Google Speech Recognition service; {0}".format(e) + OKCYAN)
 
-                print("Press space bar to record the new agent's system prompt.")
-                while not keyboard.is_pressed('space'):  # wait for space bar press
+                print("Press up arrow bar to record the new agent's system prompt.")
+                while not keyboard.is_pressed('up'):  # wait for up bar press
                     time.sleep(0.1)
                 # Now start recording
                 try:        
@@ -478,8 +478,7 @@ class ollama_chatbot_class:
         user_input_prompt = re.sub(r"activate listen on", "/listen on", user_input_prompt, flags=re.IGNORECASE)
         user_input_prompt = re.sub(r"activate listen on", "/listen off", user_input_prompt, flags=re.IGNORECASE)
 
-        user_input_prompt = re.sub(r"activate speech on", "/speech on", user_input_prompt, flags=re.IGNORECASE)
-        user_input_prompt = re.sub(r"activate speech off", "/speech off", user_input_prompt, flags=re.IGNORECASE)
+        user_input_prompt = re.sub(r"activate speech", "/speech", user_input_prompt, flags=re.IGNORECASE)
 
         user_input_prompt = re.sub(r"activate leap on", "/leap on", user_input_prompt, flags=re.IGNORECASE)
         user_input_prompt = re.sub(r"activate leap off", "/leap off", user_input_prompt, flags=re.IGNORECASE)
@@ -544,8 +543,7 @@ class ollama_chatbot_class:
             "/listen off": lambda: self.listen(False),
             "/leap on": lambda: self.leap(True),
             "/leap off": lambda: self.leap(False),
-            "/speech on": lambda: self.speech(True),
-            "/speech off": lambda: self.speech(False),
+            "/speech": lambda: self.speech_toggle(),
             "/latex on": lambda: self.latex(True),
             "/latex off": lambda: self.latex(False),
             "/command auto on": lambda: self.auto_commands(True),
@@ -577,6 +575,14 @@ class ollama_chatbot_class:
         else:
             cmd_run_flag = False
             return cmd_run_flag
+
+    def speech_toggle(self):
+        """ Toggle speech to speech feature """
+        current_state = self.listen_flag and self.leap_flag
+        new_state = not current_state
+        self.speech(new_state)
+        print(ORANGE +f"Speech to Speech is now {'off' if new_state else 'on'}" + ORANGE)
+        
         
     def get_screenshot(self):
         """ a method for taking a screenshot
@@ -651,7 +657,7 @@ if __name__ == "__main__":
 
     # ollama_chatbot_class.instancer(tts_processor_instance, directory_manager_class, unsloth_train_instance, ollama_chatbot_class, latex_render_instance)
 
-    print(OKCYAN + "Press space bar to record audio:" + OKCYAN)
+    print(OKCYAN + "Press up arrow bar to record audio:" + OKCYAN)
     print(GREEN + f"<<< USER >>> " + END)
     while True:
         user_input_prompt = ""
@@ -662,7 +668,7 @@ if __name__ == "__main__":
             user_input_prompt = input(GREEN + f"<<< USER >>> " + END)
             speech_done = True
         elif ollama_chatbot_class.listen_flag == False:
-            while keyboard.is_pressed('space'):  # user holds down the space bar
+            while keyboard.is_pressed('up'):  # user holds down the up arrow bar
                 try:
                     # Record audio from microphone
                     print(">>AUDIO SENDING<<")
