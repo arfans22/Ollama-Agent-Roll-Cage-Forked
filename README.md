@@ -16,7 +16,7 @@ https://www.youtube.com/watch?v=T7pGI5V1Soo
 **/create shrek 0.212 DEMO VIDEO 2:**
 https://www.youtube.com/watch?v=2IBPWCKCKjE
 
-**/voice /save as 0.24 DEMO, INSTALL, & SETUP VIDEO 3:**
+**/voice /save 0.24 DEMO, INSTALL, & SETUP VIDEO 3:**
 https://www.youtube.com/watch?v=xfQSfTJcPpA
 
 <img
@@ -241,10 +241,10 @@ Once you have created your own custom agent, you can now start accessing the cha
 Swap out the current chatbot model for any other model, type /swap or say "activate swap" in STT.
 
   <img
-src="Manual_Commands/Agent_Test_Pics/model_swap_tst.png"
+src="Manual_Commands/Agent_Test_Pics/model_swap_test.png"
   style="display: inline-block; margin: 0 auto; max-width: 50px">
   
-### /save as & /load as
+### /save & /open
 The current conversation history is saved or loaded for memory/conversation persistence.
 
 <div style="display: flex; width: 100%;">
@@ -456,7 +456,7 @@ and open it, right click on the ollama llama app icon, and click quit ollama.
 + ***PUSHED TO GITHUB***
 ```
 - /save - save current conversation to main history file
-- /load - load the main conversation history file for long term intermodel conversation history keep seperate from /save as and /load as and only use to keep a long term history of your entire ollama agent base for specified history.
+- /open - load the main conversation history file for long term intermodel conversation history keep seperate from /save and /open and only use to keep a long term history of your entire ollama agent base for specified history.
 - /quit - break the main python loop and return to command line
 - /swap - swap the current model with the specified model
   
@@ -488,9 +488,9 @@ and open it, right click on the ollama llama app icon, and click quit ollama.
 + ***PUSHED TO GITHUB***
 ```
 - /voice swap {name} -> user input & voice? -> swap the current audio reference wav file to modify the agent's reference voice
-- /save as -> user input & voice? -> "name" -> save the current conversation history with a name to the current model folder
+- /save -> user input & voice? -> "name" -> save the current conversation history with a name to the current model folder
 - get model name, conversation name, and store in custom directory in conversation library for each model in ollama_list.cmd
-- /load as -> user input & voice? -> "name" -> load selected conversation, spaces are replaces with underscores during voice command name save
+- /open -> user input & voice? -> "name" -> load selected conversation, spaces are replaces with underscores during voice command name save
 
 ### Update 0.25: Custom Xtts Model Training, Real Time Latex Rendering
 ```diff
