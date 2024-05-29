@@ -70,9 +70,9 @@ class tts_processor_class:
             args: audio
             returns: speech_str
         """
-        speech_str = sr.Recognizer().recognize_google(audio)
+        speech_str = sr.Recognizer().recognize_google(audio, language='id-ID') # change language ganti bahasa
         print(f">>{speech_str}<<")
-        return speech_str
+        return speech_str    
     
     def process_tts_responses(self, response, voice_name):
         """a method for managing the response preprocessing methods

@@ -227,7 +227,7 @@ These artificial mind's would be capable of projecting futuristic technology giv
 ollama_agent_roll_cage 0.24 currently supports the following commands:
 - /quit - break the main python loop and return to command line
 - /swap - swap the current model with the specified model
-- /create -> user input or voice -> "agent name" "SYM PROMPT" -> uses currently loaded model and the defined system prompt in speech or text to create a new agent with your own specific customizations
+- /ollama create -> user input or voice -> "agent name" "SYM PROMPT" -> uses currently loaded model and the defined system prompt in speech or text to create a new agent with your own specific customizations
 - /speech on/off -> swap between Speech to Speech (STS) & Text to Text (TTT) interface
 - /listen on/off -> turn off speech to text recognition, text to speech generation listen mode only
 - /leap on/off -> turn off text to speech audio generation, speech to text recognition only, for speed interface
@@ -252,14 +252,14 @@ The current conversation history is saved or loaded for memory/conversation pers
 </div>
 <img src="Manual_Commands/Agent_Test_Pics/llama3_rand_num_memory_test_JSON_GIT_EX.png" style="display: block; margin: 0 auto;">
   
-  ### /create
-Create a new agent utilizing the currently loaded model and the designated System prompt mid conversation through a cmd automation. Just say "activate create" or type /create.
+  ### /ollama create
+Create a new agent utilizing the currently loaded model and the designated System prompt mid conversation through a cmd automation. Just say "activate create" or type /ollama create.
 
 <div style="display: flex; width: 100%;">
   <img src="Manual_Commands/Agent_Test_Pics/create_cmd.png" style="width: 100%;">
 </div>
 
-after running /create the program will call create_agent_automation.cmd after constructing the ./Modelfile, here is the RicknMorty auto-generated ./Modelfile:
+after running /ollama create the program will call create_agent_automation.cmd after constructing the ./Modelfile, here is the RicknMorty auto-generated ./Modelfile:
 ```
 FROM llama3
 #temperature higher -> creative, lower -> coherent
@@ -460,11 +460,11 @@ and open it, right click on the ollama llama app icon, and click quit ollama.
 - /quit - break the main python loop and return to command line
 - /swap - swap the current model with the specified model
   
-### Update 0.21: Custom Agent /Create Automation 
+### Update 0.21: Custom Agent /ollama create Automation 
 ```diff
 + ***PUSHED TO GITHUB***
 ```
-- /create -> user input or voice -> "agent name" "SYM PROMPT" -> uses currently loaded model and the defined system prompt in speech or text to create a new agent with your own specific customizations
+- /ollama create -> user input or voice -> "agent name" "SYM PROMPT" -> uses currently loaded model and the defined system prompt in speech or text to create a new agent with your own specific customizations
 
 ### Update 0.22: Speech Optimization
 ```diff
