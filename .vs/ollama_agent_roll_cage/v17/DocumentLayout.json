@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CodingGit_StorageHDD\\Ollama_Custom_Mods\\ollama_agent_roll_cage\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\AI LOCAL\\ollama_agent_roll_cage\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\AI LOCAL\\ollama_agent_roll_cage\\ollama_mod_cage\\ollama_chatbot_class.py||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ollama_mod_cage\\ollama_chatbot_class.py||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ollama_chatbot_class.py",
+              "DocumentMoniker": "C:\\AI LOCAL\\ollama_agent_roll_cage\\ollama_mod_cage\\ollama_chatbot_class.py",
+              "RelativeDocumentMoniker": "ollama_mod_cage\\ollama_chatbot_class.py",
+              "ToolTip": "C:\\AI LOCAL\\ollama_agent_roll_cage\\ollama_mod_cage\\ollama_chatbot_class.py",
+              "RelativeToolTip": "ollama_mod_cage\\ollama_chatbot_class.py",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGSSURBVDhPpZO/agJBEId/uZgIWghiI4I2NhIUtLOwuJRHLhACtoKlnc/gI4jgI4hdJIQrAqmCvUWC2FqphSCi5o\u002BXmXFvT3IWgXzw4TI7M87t7eFfuK57ppaMQVrkFXlBHu8xLvlJvpFP5Dep4eJHkpP\u002BokOek5obMpCYzWbdWCwWiCvvSPlnhsfWJBIJ1Ot12LYt60KhgEgkonY1UuONYZLXvKhWq2g2m0in09jv9xxCPp9HuVyWZuPxWGLEK/kSOqz9A9vtdohGo7AsC6HQYZsOG\u002Bv1Gt1uF4PBQGIe3iNolsulJDYaDQyHQ2y3W8znc0wmE/T7fZXlE2hgGIYUTadTdDodzGYzmardbmO1Wqksn0CDcDiMZDKJXC6HTCYj57BYLLDZbPSZHOM14NeiqVQqUpxKpaSIJ\u002BJHKpVKKsPHa8A3THAcB61WS0aPx\u002BMy/mg0Qq1WQ6/XU1nCh/oVbPL3RXGLxaJrmmYgrrwnNXwf\u002BHqeSjzlMynv\u002BPiD4Sa3JN\u002BwSw6cgMd\u002BJx/ILw78E\u002BAHyDum0hZCUq4AAAAASUVORK5CYII=",
+              "WhenOpened": "2024-06-04T19:07:01.084Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

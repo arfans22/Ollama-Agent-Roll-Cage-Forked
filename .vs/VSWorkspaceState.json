@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ollama_mod_cage"
   ],
+  "SelectedNode": "\\ollama_mod_cage\\ollama_chatbot_class.py",
   "PreviewInSolutionExplorer": false
 }

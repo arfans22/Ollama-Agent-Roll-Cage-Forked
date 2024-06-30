@@ -66,7 +66,7 @@ class ollama_chatbot_class:
         self.chat_history = []
         self.llava_history = []
         # Default Agent Voice Reference
-        self.voice_name = "Ocha_id"
+        self.voice_name = "PeterDruryP"
         # Default conversation name
         self.save_name = "default"
         self.load_name = "default"

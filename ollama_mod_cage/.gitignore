@@ -3,3 +3,7 @@ __pycache__/
 ollama_data/
 chat_history_library/
 current_speech_wav/
+ollama_chatbot_class original.py.disable
+ollama_chatbot_class copy.py.disable
+tts_processor_class copy.py
+tts_processor_class_original.disable
